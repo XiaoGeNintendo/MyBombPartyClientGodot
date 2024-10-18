@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceu3a2o5mfarq"]
+
+[ext_resource type="Script" path="res://scripts/startButton.gd" id="1_iu16i"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_right = 718.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 64
+text = "My Bomb Party Client
+(Godot Edition)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 235.0
+offset_right = 538.0
+offset_bottom = 290.0
+
+[node name="Username" type="LineEdit" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+placeholder_text = "Username"
+
+[node name="Host" type="LineEdit" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "bomb.hellholestudios.top"
+placeholder_text = "Server Host"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Use secure connection (wss://)"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer"]
+layout_mode = 2
+text = "Start Game"
+script = ExtResource("1_iu16i")
+
+[node name="PopupMenu" type="AcceptDialog" parent="."]
+title = "Error"
+initial_position = 1
+size = Vector2i(323, 100)
+dialog_text = "Please enter username and server host!"
+
+[connection signal="pressed" from="MarginContainer/Button" to="MarginContainer/Button" method="_on_pressed"]
