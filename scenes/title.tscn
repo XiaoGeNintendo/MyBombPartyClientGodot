@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceu3a2o5mfarq"]
 
-[ext_resource type="Script" path="res://scripts/startButton.gd" id="1_iu16i"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_iu16i"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -55,8 +55,15 @@ script = ExtResource("1_iu16i")
 
 [node name="PopupMenu" type="AcceptDialog" parent="."]
 title = "Error"
-initial_position = 1
+initial_position = 2
 size = Vector2i(323, 100)
 dialog_text = "Please enter username and server host!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 572.0
+offset_right = 120.0
+offset_bottom = 595.0
+text = "Version alpha-1"
 
 [connection signal="pressed" from="MarginContainer/Button" to="MarginContainer/Button" method="_on_pressed"]

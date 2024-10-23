@@ -8,11 +8,13 @@ var id:String="Unknown"
 func _ready() -> void:
 	pass # Replace with function body.
 
-func loadData(name: String, _id: String, sub: String):
+func load_data(name: String, _id: String, sub: String):
 	nameLabel.text=name
 	id=_id
 	subLabel.text=sub
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+
+func _on_join_button_pressed() -> void:
+	Globals.room_id=id
+	get_tree().change_scene_to_file("res://scenes/mainGame.tscn")

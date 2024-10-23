@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=3 uid="uid://bajw1badxqa6s"]
+
+[ext_resource type="Script" path="res://scripts/create_room.gd" id="1_cj5c3"]
+
+[node name="CreateRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cj5c3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 441.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 48
+text = "Create New Room"
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 119.0
+offset_right = 525.0
+offset_bottom = 150.0
+placeholder_text = "Room name"
+
+[node name="Segment" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 179.0
+offset_right = 525.0
+offset_bottom = 210.0
+selected = 0
+item_count = 3
+popup/item_0/text = "en_easy"
+popup/item_1/text = "en_normal"
+popup/item_1/id = 1
+popup/item_2/text = "en_hard"
+popup/item_2/id = 2
+
+[node name="Timeout" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 239.0
+offset_right = 525.0
+offset_bottom = 270.0
+min_value = 1.0
+value = 15.0
+allow_greater = true
+prefix = "Timeout:"
+suffix = "s"
+
+[node name="RewardThreshold" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 270.0
+offset_right = 525.0
+offset_bottom = 301.0
+min_value = 1.0
+max_value = 20.0
+value = 12.0
+allow_greater = true
+prefix = "RewardThreshold:"
+suffix = "chars"
+
+[node name="InitialLife" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 301.0
+offset_right = 525.0
+offset_bottom = 332.0
+min_value = 1.0
+max_value = 10.0
+value = 3.0
+allow_greater = true
+prefix = "InitialLife:"
+
+[node name="ChangeAfterFail" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 332.0
+offset_right = 525.0
+offset_bottom = 363.0
+min_value = 1.0
+max_value = 10.0
+value = 2.0
+allow_greater = true
+prefix = "Change word after"
+suffix = "fails"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 420.0
+offset_right = 516.0
+offset_bottom = 466.0
+text = "Create Room!!!"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 18.0
+offset_right = 763.0
+offset_bottom = 64.0
+text = "Back"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Note!"
+initial_position = 2
+size = Vector2i(270, 106)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
