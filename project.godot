@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/fontawesome/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://fonts/NotoSansSC-Regular.ttf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -32,14 +32,14 @@ layout_mode = 0
 offset_left = 601.0
 offset_top = 178.0
 offset_right = 775.0
-offset_bottom = 530.0
+offset_bottom = 515.0
 color = Color(0.619608, 1, 1, 0.592157)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
 layout_mode = 0
 offset_left = 14.0
 offset_right = 150.0
-offset_bottom = 352.0
+offset_bottom = 337.0
 
 [node name="UsedWords" type="Label" parent="ColorRect/ScrollContainer"]
 unique_name_in_owner = true
@@ -82,6 +82,14 @@ offset_right = 105.0
 offset_bottom = 62.0
 text = "Exit Room"
 
+[node name="EnterButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 530.0
+offset_right = 677.0
+offset_bottom = 579.0
+text = "Enter"
+
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 19.0
@@ -117,6 +125,14 @@ offset_bottom = 522.0
 text = "\"internationalization\" is already used!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Dictionary" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 170.0
+offset_right = 181.0
+offset_bottom = 480.0
+bbcode_enabled = true
+text = "[b]Word[/b] Definition will be shown here if possible..."
 
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 0
@@ -155,6 +171,7 @@ scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_3id2h")
 
 [node name="Loading" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 800.0
 offset_bottom = 603.0
@@ -173,10 +190,14 @@ vertical_alignment = 1
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 initial_position = 2
 
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
 [connection signal="text_changed" from="Input" to="." method="_on_input_text_changed"]
 [connection signal="text_submitted" from="Input" to="." method="_on_input_text_submitted"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="EnterButton" to="." method="_on_enter_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="sort_children" from="CenterRing" to="CenterRing" method="_on_sort_children"]
 [connection signal="confirmed" from="AcceptDialog" to="." method="_on_accept_dialog_confirmed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

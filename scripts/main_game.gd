@@ -57,7 +57,7 @@ func initRoom():
 		
 	$Hint.text=room.currentSegment
 	$RoomName.text=room.name
-	%UsedWords.text="Used Words:\n"+"\n".join(room.usedWords)
+	%UsedWords.text="Used Words\n"+"\n".join(room.usedWords)
 	$Timer.text=str(room.timeLeft/10)
 	am_i_admin=len(room.players)>=1 and room.players[0].name==Globals.username
 	
@@ -74,7 +74,10 @@ func get_index_from_username(name: String) -> int:
 func change_status(text: String, color: Color):
 	$Status.text=text
 	$Status.set("theme_override_colors/font_color",color)
-	
+
+func is_my_turn() -> bool:
+	return len(room.players)>=1 and room.players[room.currentPlayer].name==Globals.username
+
 func receive(str:String) -> void:
 	if first:
 		#serialization of game room
@@ -134,15 +137,28 @@ func receive(str:String) -> void:
 	elif cmd=="new_spectator":
 		pass
 	elif cmd=="type":
-		change_status("%s is now typing: 「%s」"%[room.players[room.currentPlayer].name,para],Color.WHITE)
+		change_status("%s is now typing: '%s'"%[room.players[room.currentPlayer].name,para],Color.WHITE)
 	elif cmd=="success":
 		room.usedWords.append(para)
 		%UsedWords.text+="\n"+para
-		change_status("「%s」 is correct!"%para,Color.LAWN_GREEN)
+		change_status("'%s' is correct!"%para,Color.LAWN_GREEN)
+		
+		if is_my_turn():
+			$Input.text=""
+		
+		if room.lang=="en":
+			$HTTPRequest.request("https://api.dictionaryapi.dev/api/v2/entries/en/"+para)
+		
 	elif cmd=="fail":
-		change_status("「%s」 is invalid!"%para,Color.DEEP_PINK)
+		change_status("'%s' is invalid!"%para,Color.DEEP_PINK)
+		
+		if is_my_turn():
+			$Input.grab_focus()
 	elif cmd=="used":
-		change_status("「%s」 is already used!"%para,Color.ROSY_BROWN)
+		change_status("'%s' is already used!"%para,Color.ROSY_BROWN)
+		
+		if is_my_turn():
+			$Input.grab_focus()
 	elif cmd=="heal":
 		var index=get_index_from_username(para)
 		
@@ -217,3 +233,25 @@ func _on_input_text_changed(new_text: String) -> void:
 func _on_input_text_submitted(new_text: String) -> void:
 	if len(new_text)<=50 and "#" not in new_text:
 		socket.send("confirm#"+new_text)
+
+
+func _on_enter_button_pressed() -> void:
+	var new_text=$Input.text
+	if len(new_text)<=50 and "#" not in new_text:
+		socket.send("confirm#"+new_text)
+
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result==HTTPRequest.RESULT_SUCCESS and response_code==200:
+		var jo=JSON.parse_string(body.get_string_from_utf8())
+		#var jo = JArray.Parse(webRequest.downloadHandler.text);
+		var finalString = "[b]" + jo[0]["word"] + "[/b]\n"
+		
+		for token in jo[0]["meanings"]:
+			finalString+="[b]As: "+token["partOfSpeech"] +"[/b]"
+			for def in token["definitions"]:
+				finalString+="-"+def["definition"]+"\n"
+				
+		$Dictionary.text = finalString
+	else:
+		print("Failed to get dictionary:",result," ",response_code)
