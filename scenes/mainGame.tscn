@@ -74,6 +74,17 @@ text = "ing"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="InputReflection" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 83.0
+offset_right = 801.0
+offset_bottom = 125.0
+text = "Your Input Reflection for Mobile Friendliness"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 19.0

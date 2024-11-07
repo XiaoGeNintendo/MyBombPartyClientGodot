@@ -11,11 +11,7 @@ func refresh():
 	print("Refreshing...")
 	$Refresh.disabled=true
 	
-	var url:String
-	if Globals.protocol=="wss":
-		url="https://"+Globals.host+"/rooms"
-	else:
-		url="http://"+Globals.host+"/rooms"
+	var url:String = Globals.build_http("rooms")
 	
 	#url="https://bomb.hellholestudios.top"
 	print(url)
@@ -56,3 +52,7 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 
 func _on_refresh_pressed() -> void:
 	refresh()
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/title.tscn")

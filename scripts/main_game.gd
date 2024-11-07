@@ -211,6 +211,7 @@ func close(code, reason) -> void:
 func _process(delta: float) -> void:
 	#pass
 	socket.poll()
+	$InputReflection.text="Current Input: "+$Input.text
 
 func _on_accept_dialog_confirmed() -> void:
 	get_tree().change_scene_to_file("res://scenes/roomList.tscn")

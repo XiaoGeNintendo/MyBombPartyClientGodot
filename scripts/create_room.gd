@@ -3,7 +3,8 @@ extends Control
 var socket:=ModernWebSocket.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$HTTPRequest.request(Globals.build_http("segments"))
+	$Loading.visible=true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,3 +55,13 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/roomList.tscn")
+
+
+func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result==HTTPRequest.RESULT_SUCCESS and response_code==200:
+		for i in JSON.parse_string(body.get_string_from_utf8()):
+			$Segment.add_item(i)
+		$Loading.visible=false
+	else:
+		$AcceptDialog.dialog_text="Could not connect to server."
+		$AcceptDialog.show()

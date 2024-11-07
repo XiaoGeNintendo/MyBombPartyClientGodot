@@ -10,6 +10,12 @@ const clientVersion = "4"
 func build_url(route:String)->String:
 	return protocol+"://"+host+"/"+route
 
+func build_http(route:String)->String:
+	if protocol=="ws":
+		return "http://"+host+"/"+route
+	else:
+		return "https://"+host+"/"+route
+
 ## Build dictionary without @path or @subpath
 func to_dict_clean(x) -> Dictionary:
 	var y=inst_to_dict(x)

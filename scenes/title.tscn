@@ -64,6 +64,6 @@ layout_mode = 0
 offset_top = 572.0
 offset_right = 120.0
 offset_bottom = 595.0
-text = "Version alpha-2"
+text = "Version alpha-3"
 
 [connection signal="pressed" from="MarginContainer/Button" to="MarginContainer/Button" method="_on_pressed"]
