@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mybombparty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: mybombparty\n"
+"X-Crowdin-Project-ID: 735947\n"
+"X-Crowdin-Language: ja\n"
+"X-Crowdin-File: template.pot\n"
+"X-Crowdin-File-ID: 2\n"
+"Language-Team: Japanese\n"
+"Language: ja_JP\n"
+"PO-Revision-Date: 2024-11-25 03:29\n"
+
+#: scenes/createRoom.tscn
+#: scenes/roomList.tscn
+msgid "Create New Room"
+msgstr "新しいルームを作成する"
+
+#: scenes/createRoom.tscn
+msgid "Room name"
+msgstr "ルームネーム"
+
+#: scenes/createRoom.tscn
+msgid "Create Room!!!"
+msgstr "ルームを作成しよう！"
+
+#: scenes/createRoom.tscn
+msgid "Back"
+msgstr "もどる"
+
+#: scenes/createRoom.tscn
+#: scenes/mainGame.tscn
+msgid "Connecting..."
+msgstr "接続中..."
+
+#: scenes/createRoom.tscn
+msgid "Note!"
+msgstr "ご注意！"
+
+#: scenes/mainGame.tscn
+msgid "Enter Word Here..."
+msgstr "ここで入力しでください"
+
+#: scenes/mainGame.tscn
+msgid "Your Input Reflection for Mobile Friendliness"
+msgstr "ねこ"
+
+#: scenes/mainGame.tscn
+msgid "Exit Room"
+msgstr "もどる"
+
+#: scenes/mainGame.tscn
+msgid "Enter"
+msgstr "入室"
+
+#: scenes/mainGame.tscn
+#: scenes/title.tscn
+msgid "Start Game"
+msgstr "はじめる"
+
+#: scenes/mainGame.tscn
+msgid "Close Room"
+msgstr "ルームを閉じる"
+
+#: scenes/mainGame.tscn
+msgid "[b]Word[/b] Definition will be shown here if possible..."
+msgstr "可能な場合は、ここで[b]単語[/b]の定義が表示されます"
+
+#: scenes/roomList.tscn
+msgid "Room List"
+msgstr "ルームリスト"
+
+#: scenes/roomList.tscn
+msgid "Refresh"
+msgstr "リフレッシュ"
+
+#: scenes/roomList.tscn
+msgid "Title"
+msgstr "タイトル"
+
+#: scenes/roomList.tscn
+msgid "Error!"
+msgstr "エラー"
+
+#: scenes/title.tscn
+msgid "My Bomb Party Client\n"
+"(Godot Edition)"
+msgstr "私の爆弾パーティークライアント\n"
+"(Godot日本語版）"
+
+#: scenes/title.tscn
+msgid "Username"
+msgstr "なまえ"
+
+#: scenes/title.tscn
+msgid "Server Host"
+msgstr "サーバーアドレス"
+
+#: scenes/title.tscn
+msgid "Use secure connection (wss://)"
+msgstr "セキュアな接続を使用する (wss://)"
+
+#: scenes/title.tscn
+msgid "Error"
+msgstr "エラー"
+
+#: scenes/title.tscn
+msgid "Please enter username and server host!"
+msgstr "なまえとサーバアドレスを"
+
+#: scenes/title.tscn
+msgid "Version alpha-3"
+msgstr "Version alpha-3 JP v1"
+
+#: scripts/create_room.gd
+msgid "Please enter room name"
+msgstr "ルームネームを入力してください"
+
+#: scripts/create_room.gd
+msgid "Could not connect to server."
+msgstr "サーバーに接続できません"
+
+#: scripts/main_game.gd
+msgid "Last Winner: %s !!"
+msgstr "前回の優勝者は%s!!"
+
+#: scripts/main_game.gd
+msgid "Used Words"
+msgstr "使用済み単語"
+
+#: scripts/main_game.gd
+msgid "%s is now typing: '%s'"
+msgstr "%sは%sを入力しています"
+
+#: scripts/main_game.gd
+msgid "'%s' is correct!"
+msgstr "%sは正解！"
+
+#: scripts/main_game.gd
+msgid "'%s' is invalid!"
+msgstr "%sは残念〜"
+
+#: scripts/main_game.gd
+msgid "'%s' is already used!"
+msgstr "%sは"
+
+#: scripts/main_game.gd
+msgid "Server Connection Lost:\n"
+" %s(%d)"
+msgstr "接続中止：\n"
+"%s(%d)"
+
+#: scripts/main_game.gd
+msgid "Current Input: "
+msgstr "現在の入力： "
+
+#: scripts/main_game.gd
+msgid ""
+msgstr ""
+""
+
+#: scripts/room_list.gd
+msgid "ID: %s | %s | T %d R %d HP %d C %d"
+msgstr "ID %s | %s | T %d R %d HP %d C %d"
+

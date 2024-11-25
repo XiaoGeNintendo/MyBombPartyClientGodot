@@ -42,11 +42,11 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 			var obj=scene.instantiate()
 			$"%RoomList".add_child(obj)
 			
-			var subtitle="ID: %s | %s | T %d R %d HP %d C %d"%[i,x["segments"],x["timeout"],x["rewardThreshold"],x["initialLife"],x["changeAfterFails"]]
+			var subtitle=tr("ID: %s | %s | T %d R %d HP %d C %d")%[i,x["segments"],x["timeout"],x["rewardThreshold"],x["initialLife"],x["changeAfterFails"]]
 			obj.load_data(x["name"],i,subtitle)
 		
 	else:
-		$AcceptDialog.dialog_text="Internet Connection Failed with result %d and response code %d"%[result,response_code]
+		$AcceptDialog.dialog_text=tr("Internet Connection Failed with result %d and response code %d"%[result,response_code])
 		$AcceptDialog.show()
 
 

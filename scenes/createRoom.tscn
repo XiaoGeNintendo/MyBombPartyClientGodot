@@ -33,7 +33,6 @@ offset_left = 262.0
 offset_top = 179.0
 offset_right = 525.0
 offset_bottom = 210.0
-selected = 0
 
 [node name="Timeout" type="SpinBox" parent="."]
 layout_mode = 0
@@ -103,6 +102,7 @@ text = "Back"
 
 [node name="Loading" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 800.0
 offset_bottom = 603.0
 color = Color(0.670588, 0.666667, 0.611765, 0.407843)

@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func validate() -> String:
 	if $Name.text=="":
-		return "Please enter room name"
+		return tr("Please enter room name")
 	return "OK"
 	
 func on_close(code, reason) -> void:
@@ -63,5 +63,5 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 			$Segment.add_item(i)
 		$Loading.visible=false
 	else:
-		$AcceptDialog.dialog_text="Could not connect to server."
+		$AcceptDialog.dialog_text=tr("Could not connect to server.")
 		$AcceptDialog.show()

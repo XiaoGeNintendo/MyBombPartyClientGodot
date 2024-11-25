@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mybombparty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: mybombparty\n"
+"X-Crowdin-Project-ID: 735947\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: template.pot\n"
+"X-Crowdin-File-ID: 2\n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"PO-Revision-Date: 2024-11-25 03:29\n"
+
+#: scenes/createRoom.tscn
+#: scenes/roomList.tscn
+msgid "Create New Room"
+msgstr "创建新房间"
+
+#: scenes/createRoom.tscn
+msgid "Room name"
+msgstr "房间名"
+
+#: scenes/createRoom.tscn
+msgid "Create Room!!!"
+msgstr "创建房间！！！"
+
+#: scenes/createRoom.tscn
+msgid "Back"
+msgstr "返回……"
+
+#: scenes/createRoom.tscn
+#: scenes/mainGame.tscn
+msgid "Connecting..."
+msgstr "连接中……"
+
+#: scenes/createRoom.tscn
+msgid "Note!"
+msgstr "注意！"
+
+#: scenes/mainGame.tscn
+msgid "Enter Word Here..."
+msgstr "在此输入单词……"
+
+#: scenes/mainGame.tscn
+msgid "Your Input Reflection for Mobile Friendliness"
+msgstr "移动端输入反馈将在此显示"
+
+#: scenes/mainGame.tscn
+msgid "Exit Room"
+msgstr "离开房间"
+
+#: scenes/mainGame.tscn
+msgid "Enter"
+msgstr "输入"
+
+#: scenes/mainGame.tscn
+#: scenes/title.tscn
+msgid "Start Game"
+msgstr "开始游戏"
+
+#: scenes/mainGame.tscn
+msgid "Close Room"
+msgstr "关房"
+
+#: scenes/mainGame.tscn
+msgid "[b]Word[/b] Definition will be shown here if possible..."
+msgstr "如果可能， [b]单词[/b] 的定义将会在这里显示"
+
+#: scenes/roomList.tscn
+msgid "Room List"
+msgstr "房间列表"
+
+#: scenes/roomList.tscn
+msgid "Refresh"
+msgstr "刷新"
+
+#: scenes/roomList.tscn
+msgid "Title"
+msgstr "标题"
+
+#: scenes/roomList.tscn
+msgid "Error!"
+msgstr "错误！"
+
+#: scenes/title.tscn
+msgid "My Bomb Party Client\n"
+"(Godot Edition)"
+msgstr "My Bomb Party客户端\n"
+"（Godot中文版）"
+
+#: scenes/title.tscn
+msgid "Username"
+msgstr "用户名"
+
+#: scenes/title.tscn
+msgid "Server Host"
+msgstr "服务器地址"
+
+#: scenes/title.tscn
+msgid "Use secure connection (wss://)"
+msgstr "使用安全的链接(wss://)"
+
+#: scenes/title.tscn
+msgid "Error"
+msgstr "错误"
+
+#: scenes/title.tscn
+msgid "Please enter username and server host!"
+msgstr "请输入用户名和服务器地址！"
+
+#: scenes/title.tscn
+msgid "Version alpha-3"
+msgstr "版本alpha-3 ZH v1"
+
+#: scripts/create_room.gd
+msgid "Please enter room name"
+msgstr "请输入房间名"
+
+#: scripts/create_room.gd
+msgid "Could not connect to server."
+msgstr "无法连接到服务器"
+
+#: scripts/main_game.gd
+msgid "Last Winner: %s !!"
+msgstr "上局胜者： %s !!"
+
+#: scripts/main_game.gd
+msgid "Used Words"
+msgstr "用过的单词"
+
+#: scripts/main_game.gd
+msgid "%s is now typing: '%s'"
+msgstr "%s 正在输入：「%s」"
+
+#: scripts/main_game.gd
+msgid "'%s' is correct!"
+msgstr "%s 正确！"
+
+#: scripts/main_game.gd
+msgid "'%s' is invalid!"
+msgstr "%s 不正确！"
+
+#: scripts/main_game.gd
+msgid "'%s' is already used!"
+msgstr "%s 已经用过啦！"
+
+#: scripts/main_game.gd
+msgid "Server Connection Lost:\n"
+" %s(%d)"
+msgstr "服务器连接丢失： %s (%d)"
+
+#: scripts/main_game.gd
+msgid "Current Input: "
+msgstr "当前输入："
+
+#: scripts/main_game.gd
+msgid ""
+msgstr ""
+""
+
+#: scripts/room_list.gd
+msgid "ID: %s | %s | T %d R %d HP %d C %d"
+msgstr "房号： %s ｜%s｜时%d奖%d命%d换%d"
+

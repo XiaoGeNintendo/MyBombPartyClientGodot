@@ -1,0 +1,178 @@
+# LANGUAGE translation for MyBombParty for the following files:
+# res://scenes/createRoom.tscn
+# res://scenes/mainGame.tscn
+# res://scenes/roomList.tscn
+# res://scenes/title.tscn
+# res://scripts/create_room.gd
+# res://scripts/GameRoom.gd
+# res://scripts/GameRoomPreview.gd
+# res://scripts/globals.gd
+# res://scripts/main_game.gd
+# res://scripts/ModernWebSocket.gd
+# res://scripts/Player.gd
+# res://scripts/ring_placement.gd
+# res://scripts/room_item.gd
+# res://scripts/room_list.gd
+# res://scripts/start_button.gd
+# res://scripts/user.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MyBombParty\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/createRoom.tscn
+#: scenes/roomList.tscn
+msgid "Create New Room"
+msgstr ""
+
+#: scenes/createRoom.tscn
+msgid "Room name"
+msgstr ""
+
+#: scenes/createRoom.tscn
+msgid "Create Room!!!"
+msgstr ""
+
+#: scenes/createRoom.tscn
+msgid "Back"
+msgstr ""
+
+#: scenes/createRoom.tscn
+#: scenes/mainGame.tscn
+msgid "Connecting..."
+msgstr ""
+
+#: scenes/createRoom.tscn
+msgid "Note!"
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "Enter Word Here..."
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "Your Input Reflection for Mobile Friendliness"
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "Exit Room"
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "Enter"
+msgstr ""
+
+#: scenes/mainGame.tscn
+#: scenes/title.tscn
+msgid "Start Game"
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "Close Room"
+msgstr ""
+
+#: scenes/mainGame.tscn
+msgid "[b]Word[/b] Definition will be shown here if possible..."
+msgstr ""
+
+#: scenes/roomList.tscn
+msgid "Room List"
+msgstr ""
+
+#: scenes/roomList.tscn
+msgid "Refresh"
+msgstr ""
+
+#: scenes/roomList.tscn
+msgid "Title"
+msgstr ""
+
+#: scenes/roomList.tscn
+msgid "Error!"
+msgstr ""
+
+#: scenes/title.tscn
+msgid ""
+"My Bomb Party Client\n"
+"(Godot Edition)"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Username"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Server Host"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Use secure connection (wss://)"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Error"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Please enter username and server host!"
+msgstr ""
+
+#: scenes/title.tscn
+msgid "Version alpha-3"
+msgstr ""
+
+#: scripts/create_room.gd
+msgid "Please enter room name"
+msgstr ""
+
+#: scripts/create_room.gd
+msgid "Could not connect to server."
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "Last Winner: %s !!"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "Used Words"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "%s is now typing: '%s'"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "'%s' is correct!"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "'%s' is invalid!"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "'%s' is already used!"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid ""
+"Server Connection Lost:\n"
+" %s(%d)"
+msgstr ""
+
+#: scripts/main_game.gd
+msgid "Current Input: "
+msgstr ""
+
+#: scripts/main_game.gd
+msgid ""
+msgstr ""
+
+#: scripts/room_list.gd
+msgid "ID: %s | %s | T %d R %d HP %d C %d"
+msgstr ""

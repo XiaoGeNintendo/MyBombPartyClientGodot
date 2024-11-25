@@ -39,8 +39,8 @@ func updateLabel():
 	else:
 		$Timer.visible=false
 		$Hint.visible=true
-		$Hint.text="Last Winner: "+room.winner+"!!"
-
+		$Hint.text=tr("Last Winner: %s !!")%[room.winner]
+		
 func do_kick(username):
 	socket.send("kick#"+username)
 
@@ -57,7 +57,7 @@ func initRoom():
 		
 	$Hint.text=room.currentSegment
 	$RoomName.text=room.name
-	%UsedWords.text="Used Words\n"+"\n".join(room.usedWords)
+	%UsedWords.text=tr("Used Words")+"\n"+"\n".join(room.usedWords)
 	$Timer.text=str(room.timeLeft/10)
 	am_i_admin=len(room.players)>=1 and room.players[0].name==Globals.username
 	
@@ -137,11 +137,11 @@ func receive(str:String) -> void:
 	elif cmd=="new_spectator":
 		pass
 	elif cmd=="type":
-		change_status("%s is now typing: '%s'"%[room.players[room.currentPlayer].name,para],Color.WHITE)
+		change_status(tr("%s is now typing: '%s'")%[room.players[room.currentPlayer].name,para],Color.WHITE)
 	elif cmd=="success":
 		room.usedWords.append(para)
 		%UsedWords.text+="\n"+para
-		change_status("'%s' is correct!"%para,Color.LAWN_GREEN)
+		change_status(tr("'%s' is correct!")%para,Color.LAWN_GREEN)
 		
 		if is_my_turn():
 			$Input.text=""
@@ -150,12 +150,12 @@ func receive(str:String) -> void:
 			$HTTPRequest.request("https://api.dictionaryapi.dev/api/v2/entries/en/"+para)
 		
 	elif cmd=="fail":
-		change_status("'%s' is invalid!"%para,Color.DEEP_PINK)
+		change_status(tr("'%s' is invalid!")%para,Color.DEEP_PINK)
 		
 		if is_my_turn():
 			$Input.grab_focus()
 	elif cmd=="used":
-		change_status("'%s' is already used!"%para,Color.ROSY_BROWN)
+		change_status(tr("'%s' is already used!")%para,Color.ROSY_BROWN)
 		
 		if is_my_turn():
 			$Input.grab_focus()
@@ -204,14 +204,14 @@ func receive(str:String) -> void:
 		assert(false)
 
 func close(code, reason) -> void:
-	$AcceptDialog.dialog_text="Server Connection Lost:\n %s(%d)"%[reason,code]
+	$AcceptDialog.dialog_text=tr("Server Connection Lost:\n %s(%d)")%[reason,code]
 	$AcceptDialog.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#pass
 	socket.poll()
-	$InputReflection.text="Current Input: "+$Input.text
+	$InputReflection.text=tr("Current Input: ")+$Input.text
 
 func _on_accept_dialog_confirmed() -> void:
 	get_tree().change_scene_to_file("res://scenes/roomList.tscn")
